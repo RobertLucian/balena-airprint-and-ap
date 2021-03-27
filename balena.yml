@@ -6,8 +6,12 @@ assets:
     type: "blob.asset"
     data:
       url: "https://github.com/robertlucian/balena-airprint-and-ap"
+  logo:
+    type: "blob.asset"
+    data:
+      url: "https://raw.githubusercontent.com/robertlucian/balena-airprint-and-ap/ari/logo.png"
 data:
-  applicationConfigVariables:
+  applicationEnvironmentVariables:
     - AP_SSID: "WiFi Repeater"
     - AP_PASSWORD: "charlietheunicorn"
   defaultDeviceType: "raspberrypi3"
