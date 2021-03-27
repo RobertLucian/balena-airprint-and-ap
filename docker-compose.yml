@@ -1,0 +1,25 @@
+version: "2.1"
+
+volumes:
+  cups:
+services:
+  cups:
+    build: ./balenaPrint/cups
+    ports:
+      - "80"
+    privileged: true
+    restart: always
+    network_mode: host
+    volumes:
+      - 'cups:/etc/cups'
+    labels:
+      io.balena.features.kernel-modules: '1'
+      io.balena.features.firmware: '1'
+      io.balena.features.dbus: '1'
+      io.balena.features.supervisor-api: '1'
+      io.balena.features.balena-api: '1'
+  wifi-repeater:
+    build: ./wifiRepeater
+    privileged: true
+    labels:
+      io.balena.features.dbus: '1'

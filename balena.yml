@@ -1,0 +1,15 @@
+name: "balenaAirPrintAndAP"
+description: "AirPrint and AP capabilities to a Raspberry Pi."
+type: "sw.application"
+assets:
+  repository:
+    type: "blob.asset"
+    data:
+      url: "https://github.com/robertlucian/balena-airprint-and-ap"
+data:
+  applicationConfigVariables:
+    - AP_SSID: "WiFi Repeater"
+    - AP_PASSWORD: "charlietheunicorn"
+  defaultDeviceType: "raspberrypi3"
+  supportedDeviceTypes:
+    - "raspberrypi3"
