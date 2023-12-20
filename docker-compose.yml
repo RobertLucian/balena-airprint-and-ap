@@ -2,11 +2,12 @@ version: "2.1"
 
 volumes:
   cups:
+  octoprint:
 services:
   cups:
     build: ./balenaPrint/cups
     ports:
-      - "80"
+      - 80:80
     privileged: true
     restart: always
     network_mode: host
@@ -23,3 +24,18 @@ services:
     privileged: true
     labels:
       io.balena.features.dbus: '1'
+  octoprint:
+    image: octoprint/octoprint:1.8
+    restart: unless-stopped
+    ports:
+      - 81:80
+    devices:
+    # use `python -m serial.tools.miniterm` to see what the name is of the printer, this requires pyserial
+     - /dev/ttyACM0:/dev/ttyACM0
+    #  - /dev/video0:/dev/video0
+    volumes:
+     - octoprint:/octoprint
+    # uncomment the lines below to ensure camera streaming is enabled when
+    # you add a video device
+    #environment:
+    #  - ENABLE_MJPG_STREAMER=true
