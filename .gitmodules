@@ -3,4 +3,4 @@
 	url = https://github.com/willswire/balenaPrint
 [submodule "wifiRepeater"]
 	path = wifiRepeater
-	url = https://github.com/balenalabs-incubator/wifi-repeater
+	url = https://github.com/RobertLucian/wifi-repeater
